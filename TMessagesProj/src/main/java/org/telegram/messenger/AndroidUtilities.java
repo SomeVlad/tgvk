@@ -1641,4 +1641,8 @@ public class AndroidUtilities {
         matrix.preScale(sx, sy);
         matrix.preTranslate(tx, ty);
     }
+
+    private void unregisterManagers() {
+        UpdateManager.unregister();
+    }
 }

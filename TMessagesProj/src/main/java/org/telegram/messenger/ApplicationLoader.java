@@ -259,22 +259,7 @@ public class ApplicationLoader extends Application {
         AndroidUtilities.runOnUIThread(new Runnable() {
             @Override
             public void run() {
-                if (checkPlayServices()) {
-                    if (UserConfig.pushString != null && UserConfig.pushString.length() != 0) {
-                        FileLog.d("GCM regId = " + UserConfig.pushString);
-                    } else {
-                        FileLog.d("GCM Registration not found.");
-                    }
 
-                    //if (UserConfig.pushString == null || UserConfig.pushString.length() == 0) {
-                    Intent intent = new Intent(applicationContext, GcmRegistrationIntentService.class);
-                    startService(intent);
-                    //} else {
-                    //    FileLog.d("GCM regId = " + UserConfig.pushString);
-                    //}
-                } else {
-                    FileLog.d("No valid Google Play Services APK found.");
-                }
             }
         }, 1000);
     }

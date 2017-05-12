@@ -17,7 +17,7 @@ dependencies {
     compile 'com.android.support:support-core-utils:25.3.0'
     compile 'com.android.support:support-v13:25.3.0'
     compile 'com.android.support:palette-v7:25.3.0'
-    compile 'net.hockeyapp.android:HockeySDK:4.1.2'
+    compile 'net.hockeyapp.android:HockeySDK:4.1.4'
     compile 'com.googlecode.mp4parser:isoparser:1.0.6'
     compile 'com.stripe:stripe-android:2.0.2'
 }
@@ -46,7 +46,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
 
-    signingConfigs {
+    /*signingConfigs {
         debug {
             storeFile file("config/release.keystore")
             storePassword RELEASE_STORE_PASSWORD
@@ -62,20 +62,20 @@ android {
             keyPassword RELEASE_KEY_PASSWORD
             v2SigningEnabled false
         }
-    }
+    }*/
 
     buildTypes {
         debug {
             debuggable true
             jniDebuggable true
-            signingConfig signingConfigs.debug
+//            signingConfig signingConfigs.debug
             applicationIdSuffix ".beta"
         }
 
         release {
             debuggable false
             jniDebuggable false
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -84,7 +84,7 @@ android {
         foss {
             debuggable false
             jniDebuggable false
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
     }
 
@@ -171,4 +171,4 @@ android {
     }
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
